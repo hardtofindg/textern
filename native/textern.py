@@ -207,7 +207,7 @@ message_handlers = {
 
 def handle_inotify_event(ino, tmp_mgr):
     for event in ino.read():
-        # this icheck is relevant in the case where we're handling the inotify
+        # this check is relevant in the case where we're handling the inotify
         # event caused by tmp_mgr.new(), but then an exception occurred in
         # handle_message() which caused the tmpfile to already be deleted
         if event.name in tmp_mgr:
